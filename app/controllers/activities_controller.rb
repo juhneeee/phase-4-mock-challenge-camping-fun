@@ -22,6 +22,6 @@ class ActivitiesController < ApplicationController
         Activity.find_by!(id: params[:id])
     end
     def not_found
-        render json: {message: "Activity not found", status: 404}
+        render json: {error: "Activity not found", status: 404}, status: 404
     end
 end

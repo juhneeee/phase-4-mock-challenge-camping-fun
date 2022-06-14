@@ -24,9 +24,9 @@ class CampersController < ApplicationController
         Camper.find_by!(id: params[:id])
     end
     def not_found
-        render json: {message: "Camper not found", status: 404}
+        render json: {error: "Camper not found", status: 404}, status:404
     end
     def invalid
-        render json: {message: "validation errors", status: 422}
+        render json: {errors: ["validation errors"], status: 422}, status: 422
     end
 end

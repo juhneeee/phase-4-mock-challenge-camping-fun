@@ -12,6 +12,6 @@ class SignupsController < ApplicationController
         params.permit(:time, :camper_id, :activity_id)
     end
     def invalid
-        render json: {errors: "validation errors", status: 422}
+        render json: {errors: ["validation errors"], status: 422}, status: 422
     end
 end

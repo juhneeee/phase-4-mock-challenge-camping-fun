@@ -1,7 +1,6 @@
 class SignupsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :invalid
 
-
     def create
         signup = Signup.create!(signup_params)
         render json: Activity.find(params[:activity_id]), status: 201
